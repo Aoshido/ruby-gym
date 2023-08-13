@@ -16,8 +16,41 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
-                <h1>New Article</h1>
-                <%= render "form", article: @article %>
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">New Article</h6>
+                    </div>
+
+                    <div class="card-body">
+                        <%= render "form", article: @article %>
+                    </div>
+                </div>
+
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Articles List</h6>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Title</th>
+                                        <th>Body</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <%= render @articles %>
+                                </tbody>
+                            </table>
+                            
+                            <br />
+                            <%= will_paginate @articles %>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <!-- /.container-fluid -->
