@@ -1,26 +1,24 @@
 <%= form_with model: article do |form| %>
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+  <div class="form-group">
+    <!-- :placeholder => form.label por que no puedo hacer esto? form.label me dispara un campo cno tags entero pero deberia haber un tipo form.lable.text -->
+    <%= form.text_field :title , :class => 'form-control form-control-user', :placeholder => 'Title' %>
     <% article.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
-  <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %><br>
+  <div class="form-group">
+    <%= form.text_area :body , :class => 'form-control form-control-user', :placeholder => 'Body' %>
     <% article.errors.full_messages_for(:body).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
-  <div>
-    <%= form.label :status %><br>
-    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+  <div class="form-group">
+    <%= form.select(:status, [ "Public", "Private", "Archived" ], {include_blank: false}, { :class => 'form-control form-control-user' }) %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit class: 'btn btn-info' %>
   </div>
 <% end %>

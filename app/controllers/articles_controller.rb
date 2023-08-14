@@ -10,16 +10,17 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-    @articles = Article.paginate :page => params[:page], :per_page => 2
+    @articles = Article.paginate :page => params[:page], :per_page => 5
   end
 
   def create
     @article = Article.new(article_params)
+    @articles = Article.paginate :page => params[:page], :per_page => 5
 
     if @article.save
       redirect_to @article
     else
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity, articles: @articles
     end
   end
 
