@@ -15,10 +15,10 @@
   </div>
 
   <div class="form-group">
-    <%= form.select(:status, [ "Public", "Private", "Archived" ], {include_blank: false}, { :class => 'form-control form-control-user' }) %>
+    <%= form.select(:status, [ "public", "private", "archived" ], {include_blank: false}, { :class => 'form-control form-control-user' }) %>
   </div>
 
   <div class="form-group">
-    <%= form.submit class: 'btn btn-info' %>
+    <%= form.submit class: 'btn btn-primary btn-block' %>
   </div>
 <% end %>

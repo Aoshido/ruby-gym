@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @articles = Article.paginate :page => params[:page], :per_page => 5
-
+    binding.pry
     if @article.save
       redirect_to @article
     else
