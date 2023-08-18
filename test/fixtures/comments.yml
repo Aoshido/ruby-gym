@@ -3,9 +3,9 @@
 one:
   commenter: MyString
   body: MyText
-  article: one
+  log: one
 
 two:
   commenter: MyString
   body: MyText
-  article: two
+  log: two

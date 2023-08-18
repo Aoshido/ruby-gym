@@ -1,15 +1,15 @@
 class CommentsController < ApplicationController
     def create
-      @article = Article.find(params[:article_id])
-      @comment = @article.comments.create(comment_params)
-      redirect_to article_path(@article)
+      @log = Log.find(params[:log_id])
+      @comment = @log.comments.create(comment_params)
+      redirect_to log_path(@log)
     end
   
     def destroy
-      @article = Article.find(params[:article_id])
-      @comment = @article.comments.find(params[:id])
+      @log = Log.find(params[:log_id])
+      @comment = @log.comments.find(params[:id])
       @comment.destroy
-      redirect_to article_path(@article), status: :see_other
+      redirect_to log_path(@log), status: :see_other
     end
   
     private

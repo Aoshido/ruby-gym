@@ -1,0 +1,17 @@
+<h1><%= @log.title %></h1>
+
+<p><%= @log.body %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_log_path(@log) %></li>
+  <li><%= link_to "Destroy", log_path(@log), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
+
+<h2>Comments</h2>
+<%= render @log.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
