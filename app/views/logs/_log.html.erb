@@ -1,5 +1,26 @@
-<tr>
+<tr >
     <td><%= log.id %></td>
     <td><%= log.title %></td>
-    <td><%= log.body %></td>
+    <td><%= log.repetitions %></td>
+    <td><%= log.weight %></td>
+    <td><%= log.created_at.strftime("%F") %></td>
+    <td>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            
+            <a class="btn btn-primary btn-sm" href=<%= edit_log_path(log) %>>
+                <i class="fas fa-fw fa-pencil"></i>
+            </a>
+
+            <%= link_to log_path(log), 
+                class: 'btn btn-danger btn-sm',
+                data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } do %>
+                    <i class="fas fa-fw fa-trash-can"></i>
+                  <% end %>
+
+        </div>
+
+    </td>
 </tr>

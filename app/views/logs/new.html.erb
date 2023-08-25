@@ -9,18 +9,17 @@
 </div>
 
 <div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Logs List</h6>
-    </div>
-
-    <div class="card-body">
+    
         <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
+            <table class="table table" id="dataTable" width="100%" cellspacing="0">
+                <thead class='thead-light' >
                     <tr>
                         <th>ID</th>
-                        <th>Title</th>
-                        <th>Body</th>
+                        <th>EX type (eventually)</th>
+                        <th>Repetitions</th>
+                        <th>Weight</th>
+                        <th>Date</th>
+                        <th>&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,5 +30,5 @@
             <br />
             <%= will_paginate @logs %>
         </div>
-    </div>
+    
 </div>

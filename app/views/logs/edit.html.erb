@@ -1,3 +1,36 @@
-<h1>Edit Log</h1>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Edit Log</h6>
+    </div>
 
-<%= render "form", log: @log %>
+    <div class="card-body">
+        <%= render "form", log: @log %>
+    </div>
+</div>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Logs List</h6>
+    </div>
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Body</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%= render @logs %>
+                </tbody>
+            </table>
+            
+            <br />
+            <%= will_paginate @logs %>
+        </div>
+    </div>
+</div>
